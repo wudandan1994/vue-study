@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./lib/vue-2.4.0.js"></script>
+    </head>
+    <body>
+        <div id="app">
+           <input type="button" value="切换开关" @click="dianji" >
+           <h3 v-if="flag">这是一个h3标签</h3>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    flag:false
+                },
+                methods: {
+                    dianji(){
+                        this.flag=!this.flag;
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
