@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./lib/vue-2.4.0.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <item></item>
+            <p @click="show">懒得玩</p>
+            <p>{{msg}}</p>
+        </div>
+        <script>
+
+            // 定义组将
+    Vue.component('item',{
+        template:"<h1>h1标签</h1>"
+    })
+
+
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    msg:"hellw world"
+                },
+                methods: {
+                    show(){
+                        alert(11)
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
