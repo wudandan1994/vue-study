@@ -8,15 +8,34 @@
     </head>
     <body>
         <div id="app">
-
+            {{full}}
+            <div>{{msg}}</div>
         </div>
         <script>
             
             var vm = new Vue({
                 el: '#app',
                 data: {
-
-                }
+                    first:'你',
+                    last:"好",
+                    msg:"hello world"
+                },
+                computed: {
+                    full(){
+                        console.log("计算一次");
+                        return this.first+this.last                       
+                    }
+                },
+                methods: {
+                    change(){
+                        setTimeout(()=>{
+                            this.msg="我要改变"
+                        },2000)
+                    }
+                },
+                mounted() {
+                    this.change()
+                },
             })
         </script>
     </body>
