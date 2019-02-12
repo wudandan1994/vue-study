@@ -4,24 +4,36 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-       
+        <script src="../lib/vue-2.4.0.js"></script>
     </head>
     <body>
         <div id="app">
-            <p>+++++++{{msg}}</p>
+            <item></item>
+            <p @click='show'>{{msg}}</p>
         </div>
-        <script src="./lib/vue-2.4.0.js"></script>
         <script>
+            // 定义组件
+            Vue.component('item',{
+                template:"<h1>h1标签</h1>"
+            })
+
+
+
             var vm = new Vue({
                 el: '#app',
                 data: {
-                    msg:"今天太阳好"
+                    msg:"hello123!"
                 },
                 methods: {
-                    
+                    show(){
+                        alert(1111)
+                    }
                 },
             })
+
+
+
+
         </script>
-        
     </body>
 </html>

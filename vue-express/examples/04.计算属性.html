@@ -1,42 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="./lib/vue-2.4.0.js"></script>
+        <script src="../lib/vue-2.4.0.js"></script>
     </head>
     <body>
         <div id="app">
-            {{full}}
-            <div>{{msg}}</div>
+            
+          {{full}}
+          <div>{{msg}}</div>
+
         </div>
         <script>
-            
+         
+
+
+
             var vm = new Vue({
                 el: '#app',
                 data: {
                     first:'你',
-                    last:"好",
-                    msg:"hello world"
-                },
-                computed: {
-                    full(){
-                        console.log("计算一次");
-                        return this.first+this.last                       
-                    }
+                    last:'好',
+                    msg:"hello123!"
                 },
                 methods: {
+                    
+                },
+                computed: {
+                    full(){// computed一定要有return
+                        return this.first+this.last
+                    }
+                },
+                methods:{
                     change(){
                         setTimeout(()=>{
-                            this.msg="我要改变"
+                            this.msg="一次定时"
                         },2000)
                     }
                 },
-                mounted() {
+                created() {
                     this.change()
                 },
+               
             })
+
+
+
+
         </script>
     </body>
 </html>
