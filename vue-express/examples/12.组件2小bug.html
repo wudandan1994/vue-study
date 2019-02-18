@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../lib/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <table>
+                <tbody>
+                    <!-- <tr is='row'></tr>
+                    <tr is='row'></tr> -->
+                    <hr>
+                    <tr is='rows'></tr>
+                    <tr is='rows'></tr>
+
+                </tbody>
+            </table>
+        </div>
+        <script>
+            // Vue.component("row",{
+            //     template:"<tr><td>{{content}}</td></tr>",
+            //     data:{
+            //         content:"错误的组件实例写法"
+            //          /**  
+            //          * 报错   
+            //          * The "data" option should be a function that returns a per-instance value in component definitions
+            //          */
+            //     }
+            // })
+
+            Vue.component("rows",{
+                template:"<tr><td>{{content}}</td></tr>",
+                data(){
+                    return {
+                        content:"正确的组件实例写法"
+                    }
+                }
+            })
+
+
+
+
+
+
+
+
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                }
+            })
+        </script>
+    </body>
+</html>

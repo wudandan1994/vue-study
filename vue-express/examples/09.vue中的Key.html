@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/vue.js">
+    </script>
+</head>
+<body>
+    <div id="app">
+        <!-- 不加key时,因为都是input标签,会被复用,用户名里面的value会被直接放到邮箱里面作为它的值 -->
+        不加key
+        用户名: <input  v-if='flag'/>
+        邮箱:<input v-else-if />
+        用户名: <input  v-if='flag' key='username'/>
+        邮箱: <input  v-else-if  key='useremail'/>
+    </div>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                flag:true
+            },
+            methods: {
+                change(){
+                    setTimeout(()=>{
+                        this.flag=false
+                    },4000)
+                }
+            },
+            mounted() {
+                this.change()
+            },
+        })
+    </script>
+</body>
+</html>

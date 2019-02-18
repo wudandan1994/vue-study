@@ -44,7 +44,7 @@
 2. 给四个过渡类名加样式, 完成动画
 
 		.v-enter,
-		.v-leave-to {
+	.v-leave-to {
 			opacity: 0;
 			transform: translateY(200px);
 		}
@@ -63,25 +63,25 @@
 通过给`transition`标签添加`name`属性, 可以自定义`v-`的前缀
 
 	<transition name="my">
-      <h6 v-if="flag2">这是一个H6</h6>
-    </transition>
+	  <h6 v-if="flag2">这是一个H6</h6>
+	</transition>
 
 style样式:
 
 	.my-enter,
-    .my-leave-to {
-      opacity: 0;
-      transform: translateY(70px);
-    }
-
-    .my-enter-active,
-    .my-leave-active{
-      transition: all 0.8s ease;
-    }
+	.my-leave-to {
+	  opacity: 0;
+	  transform: translateY(70px);
+	}
+	
+	.my-enter-active,
+	.my-leave-active{
+	  transition: all 0.8s ease;
+	}
 
 ### 列表动画 ###
 
-不同于单元素动画, 需要使用`transition-group`标签进行包裹
+不同于单元素动画, 列表动画需要使用`transition-group`标签进行包裹
 
 1. 不同于 `<transition>`，它会以一个真实元素呈现：默认为一个 `<span>`。你也可以通过 `tag` 特性更换为其他元素。
 
@@ -95,28 +95,28 @@ style样式:
 案例:
 
 	<transition-group appear tag="ul">
-      <li v-for="(item, i) in list" :key="item.id" @click="del(i)">
-        {{item.id}} --- {{item.name}}
-      </li>
-    </transition-group>
+	  <li v-for="(item, i) in list" :key="item.id" @click="del(i)">
+	    {{item.id}} --- {{item.name}}
+	  </li>
+	</transition-group>
 
 style:
 
 	.v-enter,
-    .v-leave-to {
-      opacity: 0;
-      transform: translateY(80px);
-    }
-
-    .v-enter-active,
-    .v-leave-active,
-    .v-move {
-      transition: all 6s ease;
-    }
-
-    .v-leave-active {
-      position: absolute;
-    }
+	.v-leave-to {
+	  opacity: 0;
+	  transform: translateY(80px);
+	}
+	
+	.v-enter-active,
+	.v-leave-active,
+	.v-move {
+	  transition: all 6s ease;
+	}
+	
+	.v-leave-active {
+	  position: absolute;
+	}
 
 如果想让删除时的动画更加平滑, 删除一个元素后, 其他元素一起执行动画, 可以使用Vue内部封装FLIP动画队列后的 `v-move` 类样式来设置过渡效果
 
@@ -174,8 +174,8 @@ style:
 		  </template>
 
 		// 创建组件的第三种方式  同样是对象, 但是template属性指向一个模板ID即可
-	    // 需要在app区域外定义好模板, 这种做法有智能提示, 非常方便!
-	    Vue.component('com', {
-	      template: '#tmp'
-	    })
+		// 需要在app区域外定义好模板, 这种做法有智能提示, 非常方便!
+		Vue.component('com', {
+		  template: '#tmp'
+		})
 
